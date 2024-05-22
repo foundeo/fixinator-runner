@@ -12,7 +12,8 @@
         "email_reports_to": "",
         "fixinator_config": {
           "minConfidence": "high",
-          "minSeverity": "high"
+          "minSeverity": "high",
+          "ignoreScanners": ["xss"]
         }
       },
       {
@@ -27,3 +28,6 @@
     ]
   };
 </cfscript>
+<!---
+  For fixinator_config options see: https://github.com/foundeo/fixinator?tab=readme-ov-file#fixinatorjson
+--->
