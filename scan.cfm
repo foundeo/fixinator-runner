@@ -11,9 +11,9 @@
     <h2>Configuration</h2>
     <p>Fixinator API Server: #encodeForHTML(config.fixinator_api_url)#</p>
     <p>Report Format: #encodeForHTML(config.report_format)#</p>
-    <cfset fixinatorClient = new models.fixinator.FixinatorClient()>
+    <cfset fixinatorClient = new fixinatorclient.models.fixinator.FixinatorClient()>
     <cfset fixinatorClient.setAPIURL(config.fixinator_api_url)>
-    <cfset fixinatorReport = new models.fixinator.FixinatorReport()>
+    <cfset fixinatorReport = new fixinatorclient.models.fixinator.FixinatorReport()>
     <cfif config.keyExists("fixinator_api_key") AND len(config.fixinator_api_key)>
         <cfset fixinatorClient.setAPIKey(config.fixinator_api_url)>
     <cfelse>
@@ -26,9 +26,9 @@
         <cfoutput>
             <p>❌ Error initializing FixinatorClient / FixinatorReport.</p>
             <ul>
-                <li><cfif fileExists(ExpandPath("./models/fixiantor/FixinatorClient.cfc"))>✅ FixinatorClient.cfc found<cfelse>❌ models/fixiantor/FixinatorClient.cfc missing</cfif> 
-                <li><cfif fileExists(ExpandPath("./models/fixiantor/FixinatorReport.cfc"))>✅ FixinatorReport.cfc found<cfelse>❌ models/fixiantor/FixinatorReport.cfc missing</cfif> 
-                <li><cfif fileExists(ExpandPath("./mixins/generate-pdf.cfm"))>✅ generate-pdf.cfm found<cfelse>❌ mixins/generate-pdf.cfm missing</cfif> 
+                <li><cfif fileExists(ExpandPath("./fixinatorclient/models/fixiantor/FixinatorClient.cfc"))>✅ FixinatorClient.cfc found<cfelse>❌ fixinatorclient/models/fixiantor/FixinatorClient.cfc missing</cfif> 
+                <li><cfif fileExists(ExpandPath("./fixinatorclient/models/fixiantor/FixinatorReport.cfc"))>✅ FixinatorReport.cfc found<cfelse>❌ fixinatorclient/models/fixiantor/FixinatorReport.cfc missing</cfif> 
+                <li><cfif fileExists(ExpandPath("./fixinatorclient/mixins/generate-pdf.cfm"))>✅ generate-pdf.cfm found<cfelse>❌ fixinatorclient/mixins/generate-pdf.cfm missing</cfif> 
             </ul>
             <p>#encodeForHTML(cfcatch.message)#</p>
             <cfdump var="#cfcatch#">
