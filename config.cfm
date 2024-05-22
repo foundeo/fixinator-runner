@@ -2,7 +2,7 @@
   request.fixinator_runner_config = {
     "fixinator_api_url": "https://fixinator.example.com/scan/",
     "fixinator_api_key": "",
-    "report_directory": "c:\fixinator\reports\"
+    "report_directory": "c:\fixinator\reports\",
     "report_format": "pdf",
     "email_reports_from": "team@example.com",
     "applications": [
